@@ -1,6 +1,16 @@
 # This proof-of-concept shows how to enable data integrity, authenticity, and
 # confidentiality of Fernet-based journal entries, ensuring the complete privacy
 # of a personal thoughts and musings.
+#
+# See https://github.com/fernet/spec/blob/master/Spec.md#fernet-spec
+#
+# cipher_text = AES(text, key)
+#
+# intialization_vector = os.random(16)
+#
+# hmac = HMAC(version + timestamp, intialization_vector + cipher_text, key)
+#
+# fernet_token = base64encode(version + timestamp + intialization_vector + cipher_text + hmac)
 
 
 import decrypter
